@@ -5,7 +5,7 @@ import { Heading, Image, Box, VStack } from "@gluestack-ui/themed";
 
 const ItemDetail = ({ navigation, route }) => {
   const { item, category } = route.params;
-  const [details, setDetails] = useState(null);
+  const [details, setDetails] = useState("");
 
   const api = API_KEY;
 
@@ -35,6 +35,8 @@ const ItemDetail = ({ navigation, route }) => {
       },
     });
   }, [category, item.id, details]);
+  
+  console.log(details);
 
   return (
     <Box padding={30}>
